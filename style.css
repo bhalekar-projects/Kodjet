@@ -1,0 +1,292 @@
+/* ========== 1. CSS Variables & Base Reset ========== */
+:root {
+  --bs-primary: #0D2252;
+  --bs-primary-rgb: 13, 34, 82;
+  --accent: #81E7F1;
+  --font-sans: 'Roboto', sans-serif;
+  --font-alt: 'Inter', sans-serif;
+
+  --color-dark-bg: #0e2453;
+  --color-light-bg: #f8f9fa;
+  --color-accent: #72e8f2;
+
+  --tushar-dot-color: var(--color-accent); /* Used for nav underline dots */
+  --footer-link-color: #6c757d;
+  --footer-link-hover: #007bff;
+  --footer-bottom-color: #6c757d;
+  --footer-logo-height: 80px;
+}
+
+/* ========== 2. Base Reset & Global Typography ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-sans);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== 3. Utility Classes ========== */
+.text-accent {
+  color: var(--color-accent) !important;
+}
+.bg-kodjet-dark {
+  background-color: var(--color-dark-bg);
+}
+.btn-accent {
+  background-color: var(--accent);
+  color: #000;
+  font-weight: bold;
+  border: none;
+}
+.divider-line {
+  width: 200px;
+  height: 2px;
+  background-color: #adb5bd;
+  margin: 1rem auto;
+}
+
+/* ========== 4. Navbar ========== */
+header .navbar-brand {
+  font-weight: 700;
+}
+.nav-link {
+  position: relative;
+  padding-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--tushar-dot-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  opacity: 1;
+}
+
+/* ========== 5. Pricing Section ========== */
+section#pricing table th {
+  border-top: none;
+}
+section#pricing .btn-check:checked + .btn-outline-primary {
+  background-color: var(--bs-primary);
+  color: #fff;
+}
+
+/* ========== 6. Review Carousel & Cards ========== */
+.review-carousel-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+#carouselReviews .carousel-inner {
+  overflow: visible !important;
+}
+.review-card {
+  position: relative;
+  border-radius: .5rem;
+  background: #fff;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.review-card::before,
+.review-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  z-index: -1;
+}
+.review-card::after {
+  top: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+}
+.review-prev,
+.review-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+}
+.review-prev { left: -60px; }
+.review-next { right: -60px; }
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 .3rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #dee2e6;
+}
+.indicator-dot.active {
+  background-color: var(--bs-primary);
+}
+
+/* ========== 7. Service Cards & Support CTA ========== */
+.service-card {
+  background-color: var(--bs-primary);
+  border: 3px solid var(--accent);
+  border-radius: .5rem;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}
+.service-icon img {
+  width: 64px;
+  height: auto;
+}
+
+/* ========== 8. Featured Services Cards ========== */
+.fs-card {
+  position: relative;
+  overflow: visible;
+  padding: 2rem 1.5rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: .5rem;
+}
+.fs-card .hexagon-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  z-index: 1;
+}
+.fs-card h6 {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--bs-primary);
+}
+.fs-card p {
+  margin-bottom: 0;
+  line-height: 1.4;
+  height: 6.6rem;
+}
+
+/* ========== 9. Contact Section ========== */
+.contact-section {
+  background-color: var(--color-light-bg);
+  font-family: var(--font-alt);
+}
+.contact-card {
+  background-color: var(--color-dark-bg);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.contact-card h6 {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+.contact-card ul {
+  padding-left: 1rem;
+  list-style: disc;
+}
+.contact-card ul li {
+  margin-bottom: 0.5rem;
+}
+.contact-card a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ========== 10. Blog Card ========== */
+.custom-blog-card {
+  width: 577.68px;
+  padding: 23.58px;
+  border-radius: 17.68px;
+  border: 1.47px solid #ddd;
+}
+.custom-blog-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ========== 11. Button ========== */
+.unlock-pro-btn {
+  background: linear-gradient(45deg, #a100ff, #ff7f00);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.unlock-pro-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+.crown-icon {
+  font-size: 1.2rem;
+}
+
+/* ========== 12. iFrame Reusable Utility ========== */
+iframe {
+  width: 100%;
+  border: none;
+  display: block;
+}
+#header-frame {
+  height: 100px;
+}
+#footer-frame {
+  height: 450px; /* Adjust based on your footer height */
+}
+
+/* ========== 13. Footer ========== */
+.footer-logo {
+  max-height: var(--footer-logo-height);
+}
+.footer-link {
+  color: var(--footer-link-color);
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-link:hover,
+footer a:hover {
+  color: var(--color-accent, var(--footer-link-hover));
+  text-decoration: underline;
+}
+.footer-icons {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.footer-icons i {
+  margin-right: 8px;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: var(--footer-bottom-color);
+}
+.contact-info p {
+  font-size: 16px;
+  color: #333;
+}
