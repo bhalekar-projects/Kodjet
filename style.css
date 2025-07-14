@@ -289,3 +289,24 @@ footer a:hover {
   font-size: 16px;
   color: #333;
 }
+/* ========== 13.Single Blog ========== */
+.divider-line {
+  width: 180px;
+  height: 3px;
+  background: #0dcaf0; /* Bootstrap's info color */
+  margin: 1.5rem auto;
+  border-radius: 1px;
+  opacity: 0.8;
+}
+.blog-card {
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,.07);
+  border: none;
+  background: #f8f9fa;
+}
+.author-thumb {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
