@@ -29,7 +29,14 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.hover-icon {
+  color: #0e2453; /* default dark */
+  transition: color 0.3s ease;
+}
 
+.hover-icon:hover {
+  color: #01d9ff; /* red on hover */
+}
 /* ========== 3. Utility Classes ========== */
 .text-accent {
   color: var(--color-accent) !important;
@@ -144,14 +151,19 @@ section#pricing .btn-check:checked + .btn-outline-primary {
 }
 
 /* ========== 7. Service Cards & Support CTA ========== */
-.service-card {
+.service-card-Violet {
   background-color: var(--bs-primary);
   border: 3px solid var(--accent);
   border-radius: .5rem;
   padding: 2rem;
   text-align: center;
   color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.service-card-Violet:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
 .service-icon img {
   width: 64px;
   height: auto;
@@ -213,13 +225,44 @@ section#pricing .btn-check:checked + .btn-outline-primary {
   text-decoration: underline;
 }
 
+/*===== About Us ====*/
+ .team-member-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .team-member-hover:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    position: relative;
+  }
+  
+/* ========== 10.Latest Blog Card ========== */
+  .card:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
 /* ========== 10. Blog Card ========== */
 .custom-blog-card {
   width: 577.68px;
   padding: 23.58px;
   border-radius: 17.68px;
   border: 1.47px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.custom-blog-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
+  }
 .custom-blog-img {
   height: 250px;
   object-fit: cover;
@@ -311,3 +354,147 @@ footer a:hover {
   border-radius: 50%;
 }
 
+
+/*====Hexagon icon====*/
+ 
+ .hexagon-icon {
+      margin: 0 auto 15px;
+      width: 90px;
+      height: 90px;
+    }
+ 
+    .hexagon-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+ 
+    .hex-bg {
+      fill: #0a2d56;
+    }
+
+/* our service */
+
+.service-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+}
+
+.service-column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.service-card {
+  position: relative;
+  background: linear-gradient(to right, #0a2d56, #005f99);
+  color: #fff;
+  border-radius: 15px;
+  padding: 25px 25px 15px 90px;
+  max-width: 360px;
+  min-height: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-card.right-icon {
+  padding: 25px 90px 15px 25px;
+}
+
+.service-hexagon-icon {
+  position: absolute;
+  top: -15px;
+  width: 75px;
+  height: 75px;
+  z-index: 1;
+}
+
+.service-hexagon-icon.left-hex {
+  left: -15px;
+}
+
+.service-hexagon-icon.right-hex {
+  right: -15px;
+}
+
+.service-hexagon-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-hex-bg {
+  fill: #0a2d56;
+}
+
+.service-card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #7de3f9;
+  font-weight: 600;
+}
+
+.service-card p {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.service-circle-wrapper {
+  width: 320px;
+  height: 320px;
+  position: relative;
+}
+
+.service-outer-ring, .service-middle-ring, .service-inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-outer-ring {
+  width: 100%;
+  height: 100%;
+  border: 8px solid #003b7a;
+  top: 0;
+  left: 0;
+}
+
+.service-middle-ring {
+  width: 85%;
+  height: 85%;
+  border: 6px solid #0881af;
+}
+
+.service-inner-circle {
+  width: 65%;
+  height: 65%;
+  background: #fff;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.service-inner-circle img {
+  width: 50%;
+}
+
+.service-dot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #0881af;
+  background-color: #003b7a;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.service-dot-top-left     { top: -6px; left: 110px; }
+.service-dot-top-right    { top: -6px; right: 110px; }
+.service-dot-bottom-left  { bottom: -6px; left: 110px; }
+.service-dot-bottom-right { bottom: -6px; right: 110px; }
+.service-dot-left         { left: -12px; top: 50%; transform: translateY(-50%); }
+.service-dot-right        { right: -12px; top: 50%; transform: translateY(-50%); }
+  
